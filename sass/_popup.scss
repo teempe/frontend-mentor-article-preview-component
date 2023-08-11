@@ -1,0 +1,64 @@
+.popup {
+    background-color: var(--color-very-dark-grayish-blue);
+    padding: 2rem 3.2rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 2.1rem;
+
+    visibility: hidden;
+    position: absolute;
+
+    @media only screen and (min-width: $desktop-width) {
+        padding: 1.8rem 3.6rem;
+        border-radius: 1rem;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 1.1rem solid;
+            border-color: var(--color-very-dark-grayish-blue) transparent transparent transparent; 
+        }
+    }
+
+    &__text {
+        text-transform: uppercase;
+        color: var(--color-grayish-blue);
+    }
+
+    &__links {
+        list-style-type: none;
+        margin-right: auto;
+
+        display: flex;
+        column-gap: 1.5rem;
+    }
+
+    & > .share-btn {
+        background: 
+            no-repeat center url("../images/icon-share-white.svg"),
+            var(--color-desaturated-dark-blue);
+
+        @media only screen and (min-width: $desktop-width) {
+            display: none;
+        }
+    }
+}
+
+.show {
+    visibility: visible;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+
+    @media only screen and (min-width: $desktop-width) {
+        width: auto;
+        left: auto;
+        bottom: 8.4rem;
+        right: -5.6rem;
+    }
+}

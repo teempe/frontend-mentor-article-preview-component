@@ -1,0 +1,43 @@
+:root {
+    --color-very-dark-grayish-blue: #48556A;
+    --color-desaturated-dark-blue: #6E8098;
+    --color-grayish-blue: #9DAEC2;
+    --color-light-grayish-blue: #ECF2F8;
+    --color-white: #FFF;
+
+    --ff-base: 'Manrope', sans-serif;
+    --fw-medium: 500;
+    --fw-bold: 700;
+}
+
+// RESPONSIVE BREAKPOINTS
+$desktop-width: 90em;   // 1440px
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: var(--ff-base);
+    font-weight: var(--fw-medium);
+    font-size: 1.3rem;
+    line-height: 2rem;
+    letter-spacing: 0.012rem;
+    color: var(--color-desaturated-dark-blue);
+    background-color: var(--color-light-grayish-blue);
+    
+    // centering content on page
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+}

@@ -1,0 +1,85 @@
+.preview-card {
+    max-width: 32.7rem;
+    background-color: var(--color-white);
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+
+    display: grid;
+    grid-template-rows: 20rem 1fr;
+
+    @media only screen and (min-width: $desktop-width) {
+        max-width: 73rem;
+
+        grid-template-rows: 1fr;
+        grid-template-columns: 28.5rem 1fr;
+
+        overflow: visible;
+    }
+
+    &__hero {
+        background-image: url("../images/drawers.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @media only screen and (min-width: $desktop-width) {
+            border-top-left-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+        }
+    }
+
+    &__content {
+        margin: 3.6rem 3.2rem 2rem;
+
+        display: flex;
+        flex-direction: column;
+        row-gap: 3.2rem;
+
+        @media only screen and (min-width: $desktop-width) {
+            margin: 3.2rem 4rem 3.2rem 4rem;
+            row-gap: 2rem;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.2rem;
+    }
+
+    &__heading {
+        font-weight: var(--fw-bold);
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        letter-spacing: 0.02rem;
+        color: var(--color-very-dark-grayish-blue);
+
+        @media only screen and (min-width: $desktop-width) {
+            font-size: 2rem;
+            line-height: 2.8rem;
+            letter-spacing: 0.025rem;
+        }
+    }
+
+    &__foot-note {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 1.6rem;
+    }
+
+    &__author-image {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+    }
+
+    &__info {
+        margin-right: auto;
+    }
+
+    &__author-name {
+        font-weight: var(--fw-bold);
+        color: var(--color-very-dark-grayish-blue)
+    }
+}

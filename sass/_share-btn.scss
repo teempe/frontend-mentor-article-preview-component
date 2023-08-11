@@ -1,0 +1,15 @@
+.share-btn {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    background: 
+        no-repeat center url("../images/icon-share.svg"),
+        var(--color-light-grayish-blue);
+
+    display: grid;
+    place-content: center;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
