@@ -24,94 +24,108 @@ html {
 }
 
 body {
-  font-family: var(--ff-base);
-  font-weight: var(--fw-medium);
-  font-size: 1.3rem;
-  line-height: 2rem;
-  letter-spacing: 0.012rem;
-  color: var(--color-desaturated-dark-blue);
   background-color: var(--color-light-grayish-blue);
   display: grid;
   place-content: center;
   min-height: 100vh;
 }
 
-.preview-card {
-  max-width: 32.7rem;
-  background-color: var(--color-white);
-  border-radius: 1rem;
-  overflow: hidden;
-  position: relative;
-  display: grid;
-  grid-template-rows: 20rem 1fr;
+body {
+  font-family: var(--ff-base);
+  font-weight: var(--fw-medium);
+  font-size: 1.3rem;
+  line-height: 2rem;
+  letter-spacing: 0.012rem;
+  color: var(--color-desaturated-dark-blue);
 }
-@media only screen and (min-width: 90em) {
-  .preview-card {
-    max-width: 73rem;
-    grid-template-rows: 1fr;
-    grid-template-columns: 28.5rem 1fr;
-    overflow: visible;
-  }
-}
-.preview-card__hero {
-  background-image: url("../images/drawers.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-@media only screen and (min-width: 90em) {
-  .preview-card__hero {
-    border-top-left-radius: 1rem;
-    border-bottom-left-radius: 1rem;
-  }
-}
-.preview-card__content {
-  margin: 3.6rem 3.2rem 2rem;
-  display: flex;
-  flex-direction: column;
-  row-gap: 3.2rem;
-}
-@media only screen and (min-width: 90em) {
-  .preview-card__content {
-    margin: 3.2rem 4rem 3.2rem 4rem;
-    row-gap: 2rem;
-  }
-}
-.preview-card__text {
-  display: flex;
-  flex-direction: column;
-  row-gap: 1.2rem;
-}
-.preview-card__heading {
+
+.title {
   font-weight: var(--fw-bold);
+  color: var(--color-very-dark-grayish-blue);
+}
+.title--abstract {
   font-size: 1.6rem;
   line-height: 2.4rem;
   letter-spacing: 0.02rem;
-  color: var(--color-very-dark-grayish-blue);
 }
 @media only screen and (min-width: 90em) {
-  .preview-card__heading {
+  .title--abstract {
     font-size: 2rem;
     line-height: 2.8rem;
     letter-spacing: 0.025rem;
   }
 }
-.preview-card__foot-note {
+
+.article-preview {
+  max-width: 32.7rem;
+  background-color: var(--color-white);
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 20rem 1fr;
+  position: relative;
+  overflow: hidden;
+}
+.article-preview__image-container {
+  border-radius: 1rem 1rem 0rem 0rem;
+  overflow: hidden;
+}
+.article-preview__image-container > img {
+  width: 100%;
+  transform: translateY(-1.6rem);
+}
+.article-preview__content-container {
+  padding: 3.6rem 3.2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+.article-preview__abstract {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.article-preview__footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media only screen and (min-width: 90em) {
+  .article-preview {
+    max-width: 73rem;
+    grid-template-columns: 28.5rem 1fr;
+    grid-template-rows: auto;
+    overflow: visible;
+  }
+  .article-preview__image-container {
+    border-radius: 1rem 0rem 0rem 1rem;
+  }
+  .article-preview__image-container > img {
+    width: 122%;
+    transform: translateY(0rem);
+  }
+  .article-preview__content-container {
+    padding: 3.2rem 4rem;
+    gap: 2rem;
+  }
+}
+
+.foot-note {
+  display: grid;
+  grid-template-areas: "avatar name" "avatar date";
+  grid-template-columns: 4rem auto;
   column-gap: 1.6rem;
 }
-.preview-card__author-image {
-  width: 4rem;
-  height: 4rem;
+.foot-note__avatar {
+  grid-area: avatar;
+  width: 100%;
   border-radius: 50%;
 }
-.preview-card__info {
-  margin-right: auto;
+.foot-note__author {
+  grid-area: name;
 }
-.preview-card__author-name {
-  font-weight: var(--fw-bold);
-  color: var(--color-very-dark-grayish-blue);
+.foot-note__published {
+  grid-area: date;
 }
 
 .share-btn {
@@ -121,6 +135,14 @@ body {
   background: no-repeat center url("../images/icon-share.svg"), var(--color-light-grayish-blue);
   display: grid;
   place-content: center;
+}
+.share-btn--popup {
+  background: no-repeat center url("../images/icon-share-white.svg"), var(--color-desaturated-dark-blue);
+}
+@media only screen and (min-width: 90em) {
+  .share-btn--popup {
+    display: none;
+  }
 }
 .share-btn:hover {
   cursor: pointer;
@@ -160,14 +182,6 @@ body {
   margin-right: auto;
   display: flex;
   column-gap: 1.5rem;
-}
-.popup > .share-btn {
-  background: no-repeat center url("../images/icon-share-white.svg"), var(--color-desaturated-dark-blue);
-}
-@media only screen and (min-width: 90em) {
-  .popup > .share-btn {
-    display: none;
-  }
 }
 
 .show {

@@ -1,16 +1,16 @@
 {
   "name": "frontend-mentor-article-preview-component",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Frontend Mentor - Article preview component solution",
   "main": "index.js",
   "scripts": {
-    "watch:css": "sass sass/main.scss css/style.css -w",
-    "compile:css": "sass sass/main.scss css/style.css"
+    "watch:sass": "sass sass/main.scss css/style.css -w",
+    "compile:sass": "sass sass/main.scss css/style.css"
   },
   "keywords": [],
   "author": "teempe",
   "license": "ISC",
-  "dependencies": {
-    "sass": "^1.65.1"
+  "devDependencies": {
+    "sass": "^1.75.0"
   }
 }

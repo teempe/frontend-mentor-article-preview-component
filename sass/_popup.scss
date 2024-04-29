@@ -37,16 +37,6 @@
         display: flex;
         column-gap: 1.5rem;
     }
-
-    & > .share-btn {
-        background: 
-            no-repeat center url("../images/icon-share-white.svg"),
-            var(--color-desaturated-dark-blue);
-
-        @media only screen and (min-width: $desktop-width) {
-            display: none;
-        }
-    }
 }
 
 .show {

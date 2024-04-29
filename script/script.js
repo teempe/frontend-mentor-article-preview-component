@@ -18,4 +18,4 @@ const handleClick = event => {
     }
 }
 
-document.body.addEventListener('click', handleClick, true);
+document.body.addEventListener('click', handleClick);

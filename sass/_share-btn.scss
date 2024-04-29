@@ -9,6 +9,16 @@
     display: grid;
     place-content: center;
 
+    &--popup {
+        background: 
+        no-repeat center url("../images/icon-share-white.svg"),
+        var(--color-desaturated-dark-blue);
+
+        @media only screen and (min-width: $desktop-width) {
+            display: none;
+        }
+    }
+
     &:hover {
         cursor: pointer;
     }

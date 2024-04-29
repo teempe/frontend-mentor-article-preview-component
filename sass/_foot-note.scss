@@ -1,0 +1,23 @@
+.foot-note {
+    display: grid;
+    grid-template-areas: 
+        "avatar name"
+        "avatar date";
+    grid-template-columns: 4rem auto;
+    column-gap: 1.6rem;
+
+    &__avatar {
+        grid-area: avatar;
+        width: 100%;
+        border-radius: 50%;
+    }
+
+    &__author {
+        grid-area: name;
+    }
+
+    &__published {
+        grid-area: date;
+    }
+}
+ 
